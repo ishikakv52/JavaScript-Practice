@@ -21,3 +21,6 @@ console.log(value++);
 console.log(++value);
 console.log(--value);
 console.log(value--);
+
+console.log("2"==2)  //first convert the datatype then compare
+console.log("2"===2)// check both datatype and value at same time
