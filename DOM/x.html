@@ -14,11 +14,15 @@
 </head>
 <body class="bg-black">
     <div >
-        <h1 id="title" class="heading">
-            DOM,Learning
+        <h1 id="title" class="heading">DOM,Learning
+            <span style="display:none">test text</span>
         </h1>
+        <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit</h2>
+         <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit</h2>
+          <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit</h2>
+           <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit</h2>
         <p>for all related materials, community help, source code 
-            
+            <input type="password" name="" id="">
         </p>
     </div>
 </body>
@@ -45,3 +49,100 @@ innerText → changes the text of that element.
 In simple words:
 
 HTML creates the webpage → DOM represents it → JavaScript modifies it. -->
+
+<!-- 
+DOM Selectors, NodeList, and HTMLCollection
+1. DOM Selectors
+
+DOM selectors are methods used by JavaScript to select HTML elements from a webpage.
+
+getElementById()
+
+Selects an element by its id.
+
+const heading = document.getElementById("heading");
+getElementsByClassName()
+
+Selects elements by their class name.
+
+const items = document.getElementsByClassName("item");
+
+Returns an HTMLCollection.
+
+getElementsByTagName()
+
+Selects elements by their tag name.
+
+const paragraphs = document.getElementsByTagName("p");
+
+Returns an HTMLCollection.
+
+querySelector()
+
+Selects the first matching element.
+
+const heading = document.querySelector(".heading");
+querySelectorAll()
+
+Selects all matching elements.
+
+const headings = document.querySelectorAll(".heading");
+
+Returns a NodeList.
+
+2. NodeList
+
+A NodeList is a collection of nodes returned by methods such as querySelectorAll().
+
+const items = document.querySelectorAll(".item");
+
+console.log(items);
+
+You can access individual elements using an index:
+
+console.log(items[0]);
+console.log(items[1]);
+
+You can also use:
+
+items.forEach((item) => {
+  console.log(item);
+});
+Important
+
+querySelectorAll() returns a static NodeList.
+
+3. HTMLCollection
+
+An HTMLCollection is a collection of HTML elements.
+
+For example:
+
+const items = document.getElementsByClassName("item");
+
+or
+
+const paragraphs = document.getElementsByTagName("p");
+
+Both return an HTMLCollection.
+
+You can access elements using indexes:
+
+console.log(items[0]);
+Important
+
+HTMLCollection is generally live, meaning it can automatically update when the DOM changes.
+
+NodeList vs HTMLCollection
+Feature	NodeList	HTMLCollection
+Example	querySelectorAll()	getElementsByClassName()
+Contains	Nodes	HTML elements
+Usually live?	Usually static	Live
+forEach()	Yes	Not reliably supported directly
+Index access	Yes	Yes
+Easy way to remember
+getElementById()       → Element
+getElementsByClassName → HTMLCollection
+getElementsByTagName   → HTMLCollection
+querySelector()        → Element
+querySelectorAll()     → NodeList -->
