@@ -29,7 +29,7 @@ promiseThree.then((user)=>{
 })
 const promiseFour=new Promise(function(resolve,reject){
     setTimeout(()=>{
-        let error=true
+        let error=false
         if(!error){
         resolve({username:"Ishika",password:"123"})}
         else{
@@ -50,3 +50,37 @@ promiseFour.then((user)=>{
  })
  .finally(()=>console.log("promise is either resolved or rejected")
 )
+const promiseFive=new Promise(function(resolve,reject){
+    setTimeout(()=>{
+        let error=true
+        if(!error){
+        resolve({username:"JavaScript",password:"123"})}
+        else{
+            reject('Error:JS wents wrong')
+        }
+    },1000)
+})
+async function consumePromiseFive() {
+    try {
+        const response = await promiseFive
+        console.log(response)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+consumePromiseFive()
+
+async function getAllUser(){
+    try {
+        const response=await fetch('https://api.github.com/users/ishikakv52')
+    const data=await response.json()
+    console.log(data);
+    } catch (error) {
+        console.log("E:",error);
+        
+    }
+    
+}
+getAllUser()
